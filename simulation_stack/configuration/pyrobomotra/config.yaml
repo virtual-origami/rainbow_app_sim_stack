@@ -1,0 +1,61 @@
+# Robotic Arm Motion Tracker Configuration
+preset:
+  amq: # AMQP Broker Information
+    broker: &amq_connect_info
+      address: "localhost"
+      port: 5672
+    credentials: &amq_credential
+      username: "admin"
+      password: "rabbit"
+  redis: &redis_connect_info
+    server:
+      address: "localhost"
+      port: 6379
+    credentials:
+      password: "rabbit"
+  pub_sub:
+    - pub_sub_1: &sub_generator_robot
+        type: "amq"
+        broker: *amq_connect_info
+        credential: *amq_credential
+        exchange: "generator_robot"
+        queue: "generator_robot_rk"
+        handler: "robot_msg_handler"
+    - pub_sub_2: &pub_rmt_robot
+        type: "amq"
+        broker: *amq_connect_info
+        credential: *amq_credential
+        exchange: "rmt_robot"
+        queue: "rmt_robot_rk"
+        handler:
+    - pub_sub_3: &pub_visual
+        type: "amq"
+        broker: *amq_connect_info
+        credential: *amq_credential
+        exchange: "visual"
+        queue: "visual_rmt_robot_rk"
+        handler:
+  pub_sub_protocols:
+    - pubsub_protocol_1: &pub_sub_protocol_1
+        publishers:
+          - *pub_rmt_robot
+          - *pub_visual
+        subscribers:
+          - *sub_generator_robot
+  robot_arm_design:
+    two_arm_robot_1: &two_arm_robot_1
+      count: 2 # Number of Joints (excluding Wrist)
+      length:
+        shoulder_to_elbow: 6.0 # Length in Meters
+        elbow_to_gripper: 6.0 # Length in Meters
+  attributes: &attributes
+    interval: 0.1
+robot_motion_tracker:
+  version: "0.1" # Configuration Version-
+  attributes: *attributes
+  robots: # List of Robots to be simulated with unique ID
+    - protocol: *pub_sub_protocol_1
+      in_mem_db: *redis_connect_info
+
+
+

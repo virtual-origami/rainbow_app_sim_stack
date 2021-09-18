@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+    pyrobomogen:
+        image: virtualorigami/pyrobomogen:stateless 
+        container_name: pyrobomogen
+        volumes:
+            - ./configuration/pyrobomogen/config.yaml:/pyrobomogen/config.yaml:ro
+        networks:
+            - "iotstack"
+    
+    # pywalkgen:
+    #     image: virtualorigami/pywalkgen:stateless 
+    #     container_name: pywalkgen
+    #     volumes:
+    #         - configuration/pywalkgen/config.yaml:/pywalkgen/config.yaml:ro
+    #     networks:
+    #         - "iotstack"
+    
+    # pywsvisualization:
+    #     image: virtualorigami/pywsvisualization:stateless 
+    #     container_name: pywsvisualization
+    #     volumes:
+    #         - configuration/pywsvisualization/config.yaml:/pywsvisualization/config.yaml:ro
+    #     networks:
+    #         - "iotstack"
+volumes:
+    redis_data:
+
+networks:
+    iotstack:
+        external: true
