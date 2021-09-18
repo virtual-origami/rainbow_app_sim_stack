@@ -5,7 +5,7 @@ services:
         image: virtualorigami/pyrobomotra:stateless 
         container_name: pyrobomotra
         volumes:
-            - configuration/pyrobomotra/config.yaml:/pyrobomotra/config.yaml:ro
+            - ./configuration/pyrobomotra/config.yaml:/pyrobomotra/config.yaml:ro
         networks:
             - "iotstack"
     
@@ -13,7 +13,7 @@ services:
         image: virtualorigami/pypersonnelloc:stateless 
         container_name: pypersonnelloc
         volumes:
-            - configuration/pypersonnelloc/config.yaml:/pypersonnelloc/config.yaml:ro
+            - ./configuration/pypersonnelloc/config.yaml:/pypersonnelloc/config.yaml:ro
         networks:
             - "iotstack"
     
@@ -21,7 +21,7 @@ services:
         image: virtualorigami/pycollisionavoidance:stateless 
         container_name: pycollisionavoidance
         volumes:
-            - configuration/pycollisionavoidance/config.yaml:/pycollisionavoidance/config.yaml:ro
+            - ./configuration/pycollisionavoidance/config.yaml:/pycollisionavoidance/config.yaml:ro
         networks:
             - "iotstack"
     
