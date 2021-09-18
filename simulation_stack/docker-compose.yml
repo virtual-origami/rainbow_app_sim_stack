@@ -9,21 +9,21 @@ services:
         networks:
             - "iotstack"
     
-    # pywalkgen:
-    #     image: virtualorigami/pywalkgen:stateless 
-    #     container_name: pywalkgen
-    #     volumes:
-    #         - configuration/pywalkgen/config.yaml:/pywalkgen/config.yaml:ro
-    #     networks:
-    #         - "iotstack"
+    pywalkgen:
+        image: virtualorigami/pywalkgen:stateless 
+        container_name: pywalkgen
+        volumes:
+            - configuration/pywalkgen/config.yaml:/pywalkgen/config.yaml:ro
+        networks:
+            - "iotstack"
     
-    # pywsvisualization:
-    #     image: virtualorigami/pywsvisualization:stateless 
-    #     container_name: pywsvisualization
-    #     volumes:
-    #         - configuration/pywsvisualization/config.yaml:/pywsvisualization/config.yaml:ro
-    #     networks:
-    #         - "iotstack"
+    pywsvisualization:
+        image: virtualorigami/pywsvisualization:stateless 
+        container_name: pywsvisualization
+        volumes:
+            - configuration/pywsvisualization/config.yaml:/pywsvisualization/config.yaml:ro
+        networks:
+            - "iotstack"
 volumes:
     redis_data:
 
