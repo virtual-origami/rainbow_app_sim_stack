@@ -38,8 +38,8 @@ Application stack consists of following stateless components
 How to run the stack
 
 ```bash
-$ cd rainbow_app_sim_stack/application_stack
-$ docker-compose up 
+$ cd rainbow_app_sim_stack
+$ docker-compose up -f application_stack.yml 
 ```
 
 
@@ -57,8 +57,8 @@ Simulation stack consists of following stateful components
 How to run the stack
 
 ```bash
-$ cd rainbow_app_sim_stack/simulation_stack
-$ docker-compose up 
+$ cd rainbow_app_sim_stack
+$ docker-compose up -f simulation_stack.yml 
 ```
 
 
@@ -74,11 +74,10 @@ $ cd rabbITMQ
 $ docker-compose -f prototype/docker-compose.prototype.yml up
 
 # Step 2: Run Application stack
-$ cd rainbow_app_sim_stack/application_stack
-$ docker-compose up 
+$ cd rainbow_app_sim_stack
+$ docker-compose up -f application_stack.yml 
 
 # Step 3: Run Simulation stack
-$ cd rainbow_app_sim_stack/simulation_stack
-$ docker-compose up 
+$ docker-compose up -f simulation_stack.yml 
 ```
 
