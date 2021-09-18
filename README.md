@@ -39,7 +39,7 @@ How to run the stack
 
 ```bash
 $ cd rainbow_app_sim_stack
-$ docker-compose up -f application_stack.yml 
+$ docker-compose -f application_stack.yml up
 ```
 
 
@@ -58,7 +58,7 @@ How to run the stack
 
 ```bash
 $ cd rainbow_app_sim_stack
-$ docker-compose up -f simulation_stack.yml 
+$ docker-compose -f simulation_stack.yml up
 ```
 
 
@@ -75,9 +75,9 @@ $ docker-compose -f prototype/docker-compose.prototype.yml up
 
 # Step 2: Run Application stack
 $ cd rainbow_app_sim_stack
-$ docker-compose up -f application_stack.yml 
+$ docker-compose -f application_stack.yml up
 
 # Step 3: Run Simulation stack
-$ docker-compose up -f simulation_stack.yml 
+$ docker-compose -f simulation_stack.yml up
 ```
 
