@@ -33,10 +33,6 @@ Application stack consists of following stateless components
 - Robot Motion Tracking Service
 - Collision Prediction and Avoidance Service
 
-### Interaction between components
-![image](https://user-images.githubusercontent.com/48629016/133968003-074ea873-b006-4868-8fab-83bbf6b5475f.png)
-
-
 
 How to run the stack
 
@@ -84,3 +80,5 @@ $ docker-compose -f application_stack.yml up
 $ docker-compose -f simulation_stack.yml up
 ```
 
+### Interaction between components
+![image](https://user-images.githubusercontent.com/48629016/133968239-09832970-3ffe-4fff-869f-a35047ac3c7b.png)
