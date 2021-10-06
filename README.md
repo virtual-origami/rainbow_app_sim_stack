@@ -11,7 +11,7 @@ Both Application and Simulation stack need following components
 - Redis database
 - Rabbit message queue broker
 
-Thanks to **Shan** **desai** the stack is available at git@github.com:virtual-origami/rabbitmqtt.git
+Thanks to **Shan** **desai** the stack is available at https://github.com/virtual-origami/rabbitmqtt
 
 ```bash
 # clone the repository
@@ -20,7 +20,8 @@ $ git clone git@github.com:virtual-origami/rabbitmqtt.git
 
 ```bash
 # run the stack
-$ docker-compose -f prototype/docker-compose.prototype.yml up
+$ cd rabbitmqtt
+$ docker-compose up
 ```
 
 
@@ -70,7 +71,7 @@ $ docker network create iotstack
 
 # Step 1: Start Rabbit MQ and redis
 $ cd rabbitmqtt
-$ docker-compose -f prototype/docker-compose.prototype.yml up
+$ docker-compose up
 
 # Step 2: Run Application stack
 $ cd rainbow_app_sim_stack
