@@ -2,17 +2,17 @@
 preset:
   amq: # AMQP Broker Information
     broker: &amq_connect_info
-      address: "rabbitmq"
+      address: ${RABBITMQ}
       port: 5672
     credentials: &amq_credential
-      username: "admin"
-      password: "rabbit"
+      username: ${RABBITMQ_USERNAME}
+      password: ${RABBITMQ_PASSWORD}
   redis: &redis_connect_info
     server:
-      address: "redis"
+      address: ${REDIS}
       port: 6379
     credentials:
-      password: "rabbit"
+      password: ${REDIS_PASSWORD}
   pub_sub:
     - pub_sub_1: &sub_generator_robot
         type: "amq"
@@ -51,7 +51,7 @@ preset:
   attributes: &attributes
     interval: 0.1
 robot_motion_tracker:
-  version: "0.1" # Configuration Version-
+  version: "0.3" # Configuration Version-
   attributes: *attributes
   robots: # List of Robots to be simulated with unique ID
     - protocol: *pub_sub_protocol_1
