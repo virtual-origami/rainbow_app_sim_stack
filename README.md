@@ -1,30 +1,17 @@
 # rainbow_app_sim_stack
 
-This repository is collection of application and simulation stack for project Rainbow
+This repository is collection of application and simulation stack for [Project RAINBOW](https://rainbow-h2020.eu)
 
+## Components
 
+### Communication / Persistence Components
 
-### Dependencies
+Both Application and Simulation stack need following components:
 
-Both Application and Simulation stack need following components
+- Redis Database
+- Rabbit Message Broker
 
-- Redis database
-- Rabbit message queue broker
-
-Thanks to **Shan** **desai** the stack is available at https://github.com/virtual-origami/rabbitmqtt
-
-```bash
-# clone the repository
-$ git clone git@github.com:virtual-origami/rabbitmqtt.git
-```
-
-```bash
-# run the stack
-$ cd rabbitmqtt
-$ docker-compose up
-```
-
-
+Which is available at [Virtual-Origami's rabbitmqtt stack](https://github.com/virtual-origami/rabbitmqtt)
 
 ### Application stack
 
@@ -34,7 +21,6 @@ Application stack consists of following stateless components
 - Robot Motion Tracking Service
 - Collision Prediction and Avoidance Service
 
-
 How to run the stack
 
 ```bash
@@ -42,17 +28,12 @@ $ cd rainbow_app_sim_stack
 $ docker-compose -f application_stack.yml up
 ```
 
-
-
 ### Simulation stack
 
-Simulation stack consists of following stateful components 
+Simulation stack consists of following stateful components:
 
 - Robot Motion Generator Service
 - Personnel Motion Generator Service
-- Visualization Service
-
-
 
 How to run the stack
 
@@ -61,12 +42,15 @@ $ cd rainbow_app_sim_stack
 $ docker-compose -f simulation_stack.yml up
 ```
 
-
-
-### Putting it altogether
+## Steps to Bring the Stack Up
 
 ```bash
-# Step 1: Create network with name iotstack 
+
+$ git clone git@github.com:virtual-origami/rabbitmqtt.git
+
+$ cd rabbitmqtt
+$ docker-compose up
+
 $ docker network create iotstack
 
 # Step 1: Start Rabbit MQ and redis
