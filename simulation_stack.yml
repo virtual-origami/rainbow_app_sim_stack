@@ -4,6 +4,7 @@ services:
     pyrobomogen:
         image: virtualorigami/pyrobomogen:stateless 
         container_name: pyrobomogen
+        env_file: example.env
         volumes:
             - ./configuration/pyrobomogen/config.yaml:/pyrobomogen/config.yaml:ro
         networks:
@@ -12,6 +13,7 @@ services:
     pywalkgen:
         image: virtualorigami/pywalkgen:stateless 
         container_name: pywalkgen
+        env_file: example.env
         volumes:
             - ./configuration/pywalkgen/config.yaml:/pywalkgen/config.yaml:ro
         networks:

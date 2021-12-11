@@ -4,6 +4,7 @@ services:
     pyrobomotra:
         image: virtualorigami/pyrobomotra:stateless 
         container_name: pyrobomotra
+        env_file: example.env
         volumes:
             - ./configuration/pyrobomotra/config.yaml:/pyrobomotra/config.yaml:ro
         networks:
@@ -12,6 +13,7 @@ services:
     pypersonnelloc:
         image: virtualorigami/pypersonnelloc:stateless 
         container_name: pypersonnelloc
+        env_file: example.env
         volumes:
             - ./configuration/pypersonnelloc/config.yaml:/pypersonnelloc/config.yaml:ro
         networks:
@@ -20,6 +22,7 @@ services:
     pycollisionavoidance:
         image: virtualorigami/pycollisionavoidance:stateless 
         container_name: pycollisionavoidance
+        env_file: example.env
         volumes:
             - ./configuration/pycollisionavoidance/config.yaml:/pycollisionavoidance/config.yaml:ro
         networks:
